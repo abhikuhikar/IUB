@@ -1,0 +1,55 @@
+
+---- Test Case #1
+./route.py Bloomington,_Indiana Indianapolis,_Indiana bfs segments
+Congratulations! Your output  looks great! :)
+
+---- Test Case #2
+./route.py Cleveland,_Ohio Wooster,_Ohio bfs segments
+Congratulations! Your output  looks great! :)
+
+---- Test Case #4
+./route.py Cleveland,_Ohio Wooster,_Ohio uniform distance
+Congratulations! Your output  looks great! :)
+
+---- Test Case #5
+./route.py Cleveland,_Ohio Wooster,_Ohio astar distance
+Your code output: no 62.0 1.222785547785548 Cleveland,_Ohio Brook_Park,_Ohio Strongsville,_Ohio Weymouth,_Ohio Westfield_Center,_Ohio Wooster,_Ohio
+We expected: yes 62.0 -1 (path with 5 segments)
+Incorrect optimality
+
+---- Test Case #6
+./route.py Bloomington,_Indiana Wooster,_Ohio uniform distance
+Congratulations! Your output  looks great! :)
+
+---- Test Case #7
+./route.py Wooster,_Ohio Bloomington,_Indiana uniform distance
+Congratulations! Your output  looks great! :)
+
+---- Test Case #8
+./route.py Cleveland,_Ohio Wooster,_Ohio astar time
+Your code output: no 62.0 1.222785547785548 Cleveland,_Ohio Brook_Park,_Ohio Strongsville,_Ohio Weymouth,_Ohio Westfield_Center,_Ohio Wooster,_Ohio
+We expected: yes 62.0 -1 (path with 5 segments)
+Incorrect optimality
+
+---- Test Case #9
+./route.py Cleveland,_Ohio Wooster,_Ohio uniform time
+Congratulations! Your output  looks great! :)
+
+---- Test Case #10
+./route.py Wooster,_Ohio Bloomington,_Indiana uniform time
+Congratulations! Your output  looks great! :)
+
+---- Test Case #11
+./route.py Wooster,_Ohio Bloomington,_Indiana astar time
+Your code output: no 333.0 5.8121212121212125 Wooster,_Ohio Mansfield,_Ohio Chesterville,_Ohio Berkshire,_Ohio Westerville,_Ohio Worthington,_Ohio Dublin,_Ohio New_Rome,_Ohio Lafayette,_Ohio Springfield,_Ohio Fairborn,_Ohio Vandalia,_Ohio Richmond,_Indiana Spiceland,_Indiana Rushville,_Indiana Shelbyville,_Indiana Franklin,_Indiana Columbus,_Indiana Bloomington,_Indiana
+We expected: yes 320.0 -1 (path with 20 segments)
+Incorrect number of segments, not matching expectation
+
+---- Test Case #12
+./route.py Wooster,_Ohio Bloomington,_Indiana bfs time
+Congratulations! Your output  looks great! :)
+
+---- Test Case #13
+./route.py Wooster,_Ohio Bloomington,_Indiana bfs distance
+Congratulations! Your output  looks great! :)
+Passed  10  of 13 tests (1 given free)

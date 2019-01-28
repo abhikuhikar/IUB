@@ -1,0 +1,40 @@
+def performAction(CurrentBoard, action, player):
+    board = CurrentBoard['board']
+    
+    #drop action
+    if action > 0:
+        empty_spots = list(board[:,action-1]).count(".")
+        board_drop = np.array(board)
+        board_drop[empty_spots-1,action-1] = player
+        new_board = {'board': board_drop, 'currentDepth': CurrentBoard['currentDepth'] + 1, \
+                         'action' : CurrentBoard['action'] + [action]}
+        return new_board
+    
+    #rotate action
+    if action < 0:
+        action = abs(action)-1
+        empty_spots = list(board[:,action]).count(".")
+        board_rotate = np.array(board)
+        board_rotate[empty_spots:,action] = np.roll(board[empty_spots:,action],1)
+        new_board = {'board': board_rotate, 'currentDepth': CurrentBoard['currentDepth'] + 1,\
+                     'action' : CurrentBoard['action'] + [-1*(action+1)]}
+        return new_board 
+
+def play(board, firstPlayer):
+    global MaxPlayer
+    while (True):
+        MaxPlayer = firstPlayer
+        board = AlphaBetaDecision(board)
+        print("Player : " + MaxPlayer + " Move : " + str(board['action']))
+        print(board['board'])
+        if isGoal(board, MaxPlayer):
+            break
+        
+        MaxPlayer = opponent[firstPlayer]
+        action = int(input("Enter action: "))
+        board = performAction(board,action, MaxPlayer)
+        #board = AlphaBetaDecision(board)
+        print("Player : " + MaxPlayer + " Move : " + str(board['action']))
+        print(board['board'])
+        if isGoal(board, MaxPlayer):
+            break
